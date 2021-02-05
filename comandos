@@ -5,12 +5,14 @@ kubectl apply -f mysql-persistentvolume.yaml
 kubectl apply -f mysql-persistentvolumeclaim.yaml
 
 #Al ejecutarlos en este orden el deployment queda pendiente hasta que se ejecuten todos y ahi empieza a crear
-kubectl apply -f wordpress-ingress.yaml
-# para que funcione ingress con minikube tenemos que tener el addon instalado ($ minikube addons ingress)
-# tambien para que podamos verlo debemos poner en /etc/hosts la ip que se corresponda con el host
 kubectl apply -f wordpress-service.yaml 
 kubectl apply -f wordpress-persistentvolumeclaim.yaml 
 kubectl apply -f wordpress-deployment.yaml 
+minikube addons enable ingress
+kubectl apply -f wordpress-ingress.yaml
+# para que funcione ingress con minikube tenemos que tener el addon instalado ($ minikube addons enable ingress)
+# tambien para que podamos verlo debemos poner en /etc/hosts la ip que se corresponda con el host
+
 
 
 #para conseguir ip del servicio de wordpress: minikube service wordpress --url
