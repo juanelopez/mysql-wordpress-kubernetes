@@ -1,4 +1,5 @@
 #!/bin/bash
+kubectl apply -f mysql-secret.yaml
 kubectl apply -f mysql-service.yaml
 kubectl apply -f mysql-deployment.yaml
 kubectl apply -f mysql-persistentvolume.yaml
@@ -8,7 +9,7 @@ kubectl apply -f mysql-persistentvolumeclaim.yaml
 kubectl apply -f wordpress-service.yaml 
 kubectl apply -f wordpress-persistentvolumeclaim.yaml 
 kubectl apply -f wordpress-deployment.yaml 
-minikube addons enable ingress
+#minikube addons enable ingress
 kubectl apply -f wordpress-ingress.yaml
 # para que funcione ingress con minikube tenemos que tener el addon instalado ($ minikube addons enable ingress)
 # tambien para que podamos verlo debemos poner en /etc/hosts la ip que se corresponda con el host
