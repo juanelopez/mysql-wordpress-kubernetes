@@ -11,7 +11,7 @@ kubectl apply -f wordpress-deployment.yaml
 kubectl apply -f wordpress-ingress.yaml
 # para que funcione ingress con minikube tenemos que tener el addon instalado ($ minikube addons enable ingress)
 # tambien para que podamos verlo debemos poner en /etc/hosts la ip que se corresponda con el host
-
+#usar virtualbox en minikube
 
 
 #para conseguir ip del servicio de wordpress: minikube service wordpress --url
