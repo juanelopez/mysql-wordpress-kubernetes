@@ -4,5 +4,5 @@ metadata:
   name: initdb-config
 data:
   initdb.sql: |
-      CREATE USER 'juan'@'%' IDENTIFIED BY 'password';
-      GRANT ALL PRIVILEGES ON wordpress.* TO 'juan'@'%';
+      CREATE USER 'wordpress_cloud'@'%' IDENTIFIED BY 'password';
+      GRANT CREATE,DELETE,INSERT,SELECT,UPDATE ON wordpress.* TO 'wordpress_cloud'@'%';
