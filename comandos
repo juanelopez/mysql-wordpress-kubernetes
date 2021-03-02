@@ -7,6 +7,8 @@ kubectl apply -f mysql-persistentvolumeclaim.yaml
 kubectl apply -f mysql-deployment.yaml
 #Al ejecutarlos en este orden el deployment queda pendiente hasta que se ejecuten todos y ahi empieza a crear
 kubectl apply -f wordpress-service.yaml 
+kubectl apply -f wordpress-persistentvolume.yaml
+kubectl apply -f wordpress-persistentvolumeclaim.yaml
 kubectl apply -f wordpress-deployment.yaml 
 #minikube addons enable ingress
 kubectl apply -f wordpress-ingress.yaml
